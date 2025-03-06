@@ -18,8 +18,9 @@
     "--filesystem=host-os:ro",
     "--filesystem=/var/lib/flatpak:ro",
     "--filesystem=xdg-data/flatpak:ro",
-    "--filesystem=xdg-data/applications",
+    "--filesystem=xdg-data/applications:create",
     "--filesystem=xdg-data/icons",
+    "--filesystem=xdg-config/cosmic",
     "--talk-name=com.system76.CosmicSettingsDaemon"
   ],
   "build-options": {
@@ -43,7 +44,7 @@
         {
           "type": "git",
           "url": "https://github.com/cosmic-utils/web-apps",
-          "commit": "cf84f9324b3e2468fac6aafa5eb2f4906dade882",
+          "commit": "adff6f29260fb17ad63172eb7480d0337eccf6e2",
           "builddir": true
         },
         "cargo-sources.json"
