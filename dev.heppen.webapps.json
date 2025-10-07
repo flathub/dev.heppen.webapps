@@ -34,10 +34,10 @@
         "just install"
       ],
       "sources": [
-	{
+        {
           "type": "git",
           "url": "https://github.com/cosmic-utils/web-apps",
-          "commit": "11de4d8aa640b080394d1425bde613069d6c8e46"
+          "commit": "0d1847a2523ecd77c3f4c8024d22e7223ad1104f"
         },
         "cargo-sources.json"
       ]
