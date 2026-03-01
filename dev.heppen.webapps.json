@@ -1,46 +1,48 @@
 {
-  "app-id": "dev.heppen.webapps",
-  "runtime": "org.gnome.Platform",
-  "runtime-version": "48",
-  "sdk": "org.gnome.Sdk",
-  "sdk-extensions": ["org.freedesktop.Sdk.Extension.rust-stable"],
-  "base": "com.system76.Cosmic.BaseApp",
-  "base-version": "stable",
-  "command": "dev.heppen.webapps",
-  "finish-args": [
-    "--share=ipc",
-    "--socket=fallback-x11",
-    "--socket=wayland",
-    "--device=dri",
-    "--share=network",
-    "--filesystem=xdg-config/cosmic",
-    "--talk-name=com.system76.CosmicSettingsDaemon"
-  ],
-  "build-options": {
-    "append-path": "/usr/lib/sdk/rust-stable/bin"
-  },
-  "modules": [
-    {
-      "name": "quick-webapps",
-      "buildsystem": "simple",
-      "build-options": {
-        "env": {
-          "CARGO_HOME": "/run/build/quick-webapps/cargo"
-        }
-      },
-      "build-commands": [
-        "cargo --offline fetch --manifest-path Cargo.toml --verbose",
-        "cargo --offline build --release --verbose",
-        "just install"
-      ],
-      "sources": [
+    "app-id": "dev.heppen.webapps",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "49",
+    "sdk": "org.gnome.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.rust-stable"
+    ],
+    "base": "com.system76.Cosmic.BaseApp",
+    "base-version": "stable",
+    "command": "dev.heppen.webapps",
+    "finish-args": [
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--share=network",
+        "--filesystem=xdg-config/cosmic",
+        "--talk-name=com.system76.CosmicSettingsDaemon"
+    ],
+    "build-options": {
+        "append-path": "/usr/lib/sdk/rust-stable/bin"
+    },
+    "modules": [
         {
-          "type": "git",
-          "url": "https://github.com/cosmic-utils/web-apps",
-          "commit": "0d1847a2523ecd77c3f4c8024d22e7223ad1104f"
-        },
-        "cargo-sources.json"
-      ]
-    }
-  ]
+            "name": "quick-webapps",
+            "buildsystem": "simple",
+            "build-options": {
+                "env": {
+                    "CARGO_HOME": "/run/build/quick-webapps/cargo"
+                }
+            },
+            "build-commands": [
+                "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+                "cargo --offline build --release --verbose",
+                "just prefix=/app install"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/cosmic-utils/web-apps",
+                    "commit": "53700e8280bcf9580816092cf5bc3b7ca054e8c5"
+                },
+                "cargo-sources.json"
+            ]
+        }
+    ]
 }
