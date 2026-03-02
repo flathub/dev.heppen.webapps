@@ -31,7 +31,7 @@
             "build-options": {
                 "env": {
                     "CARGO_HOME": "/run/build/quick-webapps/cargo",
-                    "CEF_PATH": "/run/build/quick-webapps/cef"
+                    "CEF_PATH": "/tmp/cef"
                 }
             },
             "build-commands": [
